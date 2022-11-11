@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgroundQuizz1"
+    android:background="@drawable/backgroundQuizz2"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/quizz_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
@@ -22,7 +22,7 @@
         android:id="@+id/chooseTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/quizz_icon"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"
@@ -90,6 +90,7 @@
     </LinearLayout>
 <!--    Ô 3-->
     <LinearLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -147,5 +148,17 @@
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
-
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Quizz"
+        android:layout_below="@+id/layout2"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/round_back_blue20"/>
 </RelativeLayout>
