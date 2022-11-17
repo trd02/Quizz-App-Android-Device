@@ -100,14 +100,14 @@
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/heMatTroi"
+                android:id="@+id/sinhHoc"
                 android:background="@color/purple_700"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="Hệ Mặt Trời"
+                android:text="Sinh học"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
     </ScrollView>
@@ -116,7 +116,7 @@
         android:id="@+id/startQuizzBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bắt đầu"
+        android:text="BẮT ĐẦU"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
