@@ -18,4 +18,9 @@
         android:name="com.example.quizzapp.QuizzActivityFragment"
         android:label="fragment_quizz_activity"
         tools:layout="@layout/fragment_quizz_activity" />
+    <fragment
+        android:id="@+id/quizzResults"
+        android:name="com.example.quizzapp.QuizzResults"
+        android:label="fragment_quizz_results"
+        tools:layout="@layout/fragment_quizz_results" />
 </navigation>
