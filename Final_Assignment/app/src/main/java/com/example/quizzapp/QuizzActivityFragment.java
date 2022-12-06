@@ -1,6 +1,5 @@
 package com.example.quizzapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 import java.util.List;
 import java.util.Timer;
@@ -223,12 +223,12 @@ public class QuizzActivityFragment extends Fragment {
             option4.setText(questionList.get(currentQuestionPosition).getOption4());
         }
         else{
-            Intent intent = new Intent(getActivity(), QuizzResults.class);
-            intent.putExtra("correct", getCorrectAnswers());
-            intent.putExtra("incorrect", getInCorrectAnswers());
-            startActivity(intent);
+            Bundle bundle = new Bundle();
+            bundle.putInt("Correct", getCorrectAnswers());
+            bundle.putInt("Incorrect", getInCorrectAnswers());
+            getParentFragmentManager().setFragmentResult("dataFromQuizzActivity", bundle);
 
-            getActivity().finish();
+            Navigation.findNavController(view).navigate(R.id.action_quizzActivityFragment_to_quizzResults);
         }
     }
 
@@ -248,12 +248,12 @@ public class QuizzActivityFragment extends Fragment {
 
                     Toast.makeText(getActivity(), "TimeOver", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getActivity(), QuizzResults.class);
-                    intent.putExtra("Correct", getCorrectAnswers());
-                    intent.putExtra("Incorrect", getInCorrectAnswers());
-                    startActivity(intent);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("Correct", getCorrectAnswers());
+                    bundle.putInt("Incorrect", getInCorrectAnswers());
+                    getParentFragmentManager().setFragmentResult("dataFromQuizzActivity", bundle);
 
-                    getActivity().finish();
+                    Navigation.findNavController(view).navigate(R.id.action_quizzActivityFragment_to_quizzResults);
                 }
                 else{
                     seconds--;
