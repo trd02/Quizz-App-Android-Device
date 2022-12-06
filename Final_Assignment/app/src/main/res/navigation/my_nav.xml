@@ -17,10 +17,21 @@
         android:id="@+id/quizzActivityFragment"
         android:name="com.example.quizzapp.QuizzActivityFragment"
         android:label="fragment_quizz_activity"
-        tools:layout="@layout/fragment_quizz_activity" />
+        tools:layout="@layout/fragment_quizz_activity" >
+        <argument
+            android:name="foxdata"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_quizzActivityFragment_to_quizzResults"
+            app:destination="@id/quizzResults" />
+    </fragment>
     <fragment
         android:id="@+id/quizzResults"
         android:name="com.example.quizzapp.QuizzResults"
         android:label="fragment_quizz_results"
-        tools:layout="@layout/fragment_quizz_results" />
+        tools:layout="@layout/fragment_quizz_results" >
+        <action
+            android:id="@+id/action_quizzResults_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

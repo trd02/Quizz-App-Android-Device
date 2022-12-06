@@ -47,24 +47,51 @@ public class QuizzActivityFragment extends Fragment {
 
     private String selectedOptionByUser = "";
 
+
+
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     public QuizzActivityFragment() {
         // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment BlankFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static QuizzActivityFragment newInstance(String param1, String param2) {
+        QuizzActivityFragment fragment = new QuizzActivityFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //Lấy dữ liệu từ MainFragment và thay đổi Name Topic
-        getParentFragmentManager().setFragmentResultListener("dataFromMenu", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                getSelectedTopicName = result.getString("selectedTopicName");
-                TextView selectedTopicName = view.findViewById(R.id.topicName);
-                selectedTopicName.setText(getSelectedTopicName);
-            }
-        });
-            view = inflater.inflate(R.layout.fragment_quizz_activity, container, false);
-            return view;
+        view = inflater.inflate(R.layout.fragment_quizz_activity, container, false);
+        return view;
     }
 
     @Override
@@ -81,87 +108,97 @@ public class QuizzActivityFragment extends Fragment {
 
         nextBtn = view.findViewById(R.id.nextBtn);
 
-        final TextView timer = view.findViewById(R.id.timer);
-
-        questionList = QuestionsBank.getQuestions(getSelectedTopicName);
-        startTimer(timer);
-
-        questions.setText((currentQuestionPosition + 1) + "/" + questionList.size());
-        question.setText(questionList.get(0).getQuestion());
-        option1.setText(questionList.get(0).getOption1());
-        option2.setText(questionList.get(0).getOption2());
-        option3.setText(questionList.get(0).getOption3());
-        option4.setText(questionList.get(0).getOption4());
-
-        option1.setOnClickListener(new View.OnClickListener() {
+        getParentFragmentManager().setFragmentResultListener("dataFromMenu", this, new FragmentResultListener() {
             @Override
-            public void onClick(View v) {
-                if(selectedOptionByUser.isEmpty()){
-                    selectedOptionByUser = option1.getText().toString();
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+                getSelectedTopicName = bundle.getString("selectedTopicName");
+                TextView selectedTopicName = view.findViewById(R.id.topicName);
+                selectedTopicName.setText(getSelectedTopicName);
 
-                    option1.setBackgroundResource(android.R.color.holo_red_dark);
+                final TextView timer = view.findViewById(R.id.timer);
 
-                    revealAnswer();
+                questionList = QuestionsBank.getQuestions(getSelectedTopicName);
 
-                    questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
-                }
-            }
-        });
+                startTimer(timer);
 
-        option2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(selectedOptionByUser.isEmpty()){
-                    selectedOptionByUser = option2.getText().toString();
+                questions.setText((currentQuestionPosition + 1) + "/" + questionList.size());
+                question.setText(questionList.get(0).getQuestion());
+                option1.setText(questionList.get(0).getOption1());
+                option2.setText(questionList.get(0).getOption2());
+                option3.setText(questionList.get(0).getOption3());
+                option4.setText(questionList.get(0).getOption4());
 
-                    option2.setBackgroundResource(android.R.color.holo_red_dark);
+                option1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(selectedOptionByUser.isEmpty()){
+                            selectedOptionByUser = option1.getText().toString();
 
-                    revealAnswer();
+                            option1.setBackgroundResource(android.R.color.holo_red_dark);
 
-                    questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
-                }
-            }
-        });
+                            revealAnswer();
 
-        option3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(selectedOptionByUser.isEmpty()){
-                    selectedOptionByUser = option3.getText().toString();
+                            questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                        }
+                    }
+                });
 
-                    option3.setBackgroundResource(android.R.color.holo_red_dark);
+                option2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(selectedOptionByUser.isEmpty()){
+                            selectedOptionByUser = option2.getText().toString();
 
-                    revealAnswer();
+                            option2.setBackgroundResource(android.R.color.holo_red_dark);
 
-                    questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
-                }
-            }
-        });
+                            revealAnswer();
 
-        option4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(selectedOptionByUser.isEmpty()){
-                    selectedOptionByUser = option4.getText().toString();
+                            questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                        }
+                    }
+                });
 
-                    option4.setBackgroundResource(android.R.color.holo_red_dark);
+                option3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(selectedOptionByUser.isEmpty()){
+                            selectedOptionByUser = option3.getText().toString();
 
-                    revealAnswer();
+                            option3.setBackgroundResource(android.R.color.holo_red_dark);
 
-                    questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
-                }
-            }
-        });
+                            revealAnswer();
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(selectedOptionByUser.isEmpty()) {
-                    Toast.makeText(getActivity(),"Plase choose answer",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    changeNextQuestion();
-                }
+                            questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                        }
+                    }
+                });
+
+                option4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(selectedOptionByUser.isEmpty()){
+                            selectedOptionByUser = option4.getText().toString();
+
+                            option4.setBackgroundResource(android.R.color.holo_red_dark);
+
+                            revealAnswer();
+
+                            questionList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                        }
+                    }
+                });
+
+                nextBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(selectedOptionByUser.isEmpty()) {
+                            Toast.makeText(getActivity(),"Plase choose answer",Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            changeNextQuestion();
+                        }
+                    }
+                });
             }
         });
     }
