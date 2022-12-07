@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/round_back_light_yellow"
+        android:background="@drawable/round_back_white_stroke10"
         android:gravity="center"
         android:minHeight="100dp"
         android:text="Question will come here"
@@ -94,8 +94,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"/>
-<!--        android:onClick="checkAnswer" -->
-
 
     <Button
         android:id="@+id/option2"
@@ -106,8 +104,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"/>
-<!--        android:onClick="checkAnswer"-->
-
 
     <Button
         android:id="@+id/option3"
@@ -118,7 +114,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"/>
-<!--        android:onClick="checkAnswer"/>-->
 
     <Button
         android:id="@+id/option4"
@@ -129,7 +124,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"/>
-<!--        android:onClick="checkAnswer"/>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextBtn"

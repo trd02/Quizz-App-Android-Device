@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/background_quizz2"
     tools:context=".MainFragment">
 
     <ImageView
         android:id="@+id/quizz_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:layout_gravity="center"
         android:src="@drawable/quizz_icon"/>
 
     <TextView
@@ -117,6 +119,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BẮT ĐẦU"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/round_back_blue20"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/informationBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin tác giả"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"

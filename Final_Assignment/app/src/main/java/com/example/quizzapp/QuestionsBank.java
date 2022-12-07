@@ -90,7 +90,7 @@ public class QuestionsBank {
         final List<QuestionList> questionsLists = new ArrayList<>();
 
         //
-        final QuestionList question1 =  new QuestionList("hất nào sau đây được coi là chất tinh khiết?", "Nước cất", "Nước suối", "Nước khoáng", "Nước đá từ nhà máy", "Nước cất", "");
+        final QuestionList question1 =  new QuestionList("Chất nào sau đây được coi là chất tinh khiết?", "Nước cất", "Nước suối", "Nước khoáng", "Nước đá từ nhà máy", "Nước cất", "");
         final QuestionList question2 = new QuestionList("Cho dãy các cụm từ sau, dãy nào dưới đây chỉ chất?", "Bàn ghế, đường kính, vải may áo", "Muối ăn, đường kính, bột sắt, nước cất", "Bút chì, thước kẻ, nước cất, vàng", "Nhôm, sắt, than củi, chảo gang", "Muối ăn, đường kính, bột sắt, nước cất", "");
         final QuestionList question3 = new QuestionList("Hạt nhân nguyên tử được cấu tạo bởi?", "Neutron và electron", "Proton và electron", "Proton và neutron", "Electron", "Proton và neutron", "");
         final QuestionList question4 = new QuestionList("Trong nguyên tử, hạt nào mang điện?", "Neutron và electron", "Proton và electron", "Electron", " Proton và neutron", "Proton và electron", "");

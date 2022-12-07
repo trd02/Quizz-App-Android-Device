@@ -10,56 +10,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-/**
- * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
- */
 
 public class MainFragment extends Fragment {
 
     String selectedTopicName = "";
     View view;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public MainFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -73,8 +33,6 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        NavController navController = Navigation.findNavController(view);
 
         //Change selected button scrollview
         Button dialy = view.findViewById(R.id.diaLy);
@@ -143,7 +101,7 @@ public class MainFragment extends Fragment {
         thienvan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedTopicName = "Thiên  Văn";
+                selectedTopicName = "Thiên Văn";
 
                 thienvan.setBackgroundResource(R.color.teal_200);
                 dialy.setBackgroundResource(R.color.purple_700);
@@ -170,6 +128,15 @@ public class MainFragment extends Fragment {
 
         //Move to fragment2
         Button startButton = view.findViewById(R.id.startQuizzBtn);
+        Button informationBtn = view.findViewById(R.id.informationBtn);
+
+        informationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_quizzInformation);
+            }
+        });
+
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -184,7 +151,7 @@ public class MainFragment extends Fragment {
                     getParentFragmentManager().setFragmentResult("dataFromMenu", bundle);
 
                     //Khởi chạy fragment tiếp theo
-                    navController.navigate(R.id.action_mainFragment_to_quizzChooseDifficulty);
+                    Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_quizzChooseDifficulty);
                 }
             }
         });
