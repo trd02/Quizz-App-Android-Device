@@ -29,17 +29,25 @@
             android:text="Số câu trả lời đúng: 0"
             android:textStyle="bold"/>
         <TextView
+            android:id="@+id/inCorrectAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/inCorrectAnswer"
             android:text="Số câu trả lời sai: 0"
             android:textStyle="bold"/>
+        <Button
+            android:id="@+id/shareSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chia sẻ thành tích"
+            android:textStyle="bold" />
     </LinearLayout>
     <Button
         android:id="@+id/startNewQuizz"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Làm Quizz mới"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"/>
+
 </RelativeLayout>

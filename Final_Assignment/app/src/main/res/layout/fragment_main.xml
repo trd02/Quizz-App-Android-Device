@@ -44,8 +44,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
             <Button
                 android:id="@+id/diaLy"
                 android:background="@color/purple_700"

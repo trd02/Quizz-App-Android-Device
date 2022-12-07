@@ -25,10 +25,10 @@ import java.util.TimerTask;
  */
 public class QuizzActivityFragment extends Fragment {
 
-
     View view; //Vì fragment phải ánh xạ lại chính nó.
 
     private String getSelectedTopicName = "";
+    private int getSelectedDifficulty;
 
     private TextView questions;
     private TextView question;
@@ -46,46 +46,6 @@ public class QuizzActivityFragment extends Fragment {
     private int currentQuestionPosition = 0;
 
     private String selectedOptionByUser = "";
-
-
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public QuizzActivityFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static QuizzActivityFragment newInstance(String param1, String param2) {
-        QuizzActivityFragment fragment = new QuizzActivityFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -108,16 +68,18 @@ public class QuizzActivityFragment extends Fragment {
 
         nextBtn = view.findViewById(R.id.nextBtn);
 
-        getParentFragmentManager().setFragmentResultListener("dataFromMenu", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("dataFromDifficulty", this, new FragmentResultListener() {
             @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
-                getSelectedTopicName = bundle.getString("selectedTopicName");
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                getSelectedDifficulty = result.getInt("selectedDifficulty");
+
+                getSelectedTopicName = result.getString("selectedTopicName");
                 TextView selectedTopicName = view.findViewById(R.id.topicName);
                 selectedTopicName.setText(getSelectedTopicName);
 
                 final TextView timer = view.findViewById(R.id.timer);
 
-                questionList = QuestionsBank.getQuestions(getSelectedTopicName);
+                questionList = QuestionsBank.getQuestions(getSelectedTopicName, getSelectedDifficulty);
 
                 startTimer(timer);
 
@@ -224,6 +186,8 @@ public class QuizzActivityFragment extends Fragment {
         }
         else{
             Bundle bundle = new Bundle();
+            bundle.putString("sTopicName", getSelectedTopicName);
+            bundle.putInt("sDifficulty", getSelectedDifficulty);
             bundle.putInt("Correct", getCorrectAnswers());
             bundle.putInt("Incorrect", getInCorrectAnswers());
             getParentFragmentManager().setFragmentResult("dataFromQuizzActivity", bundle);
@@ -251,6 +215,8 @@ public class QuizzActivityFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putInt("Correct", getCorrectAnswers());
                     bundle.putInt("Incorrect", getInCorrectAnswers());
+                    bundle.putString("sTopicName", getSelectedTopicName);
+                    bundle.putInt("sDifficulty", getSelectedDifficulty);
                     getParentFragmentManager().setFragmentResult("dataFromQuizzActivity", bundle);
 
                     Navigation.findNavController(view).navigate(R.id.action_quizzActivityFragment_to_quizzResults);

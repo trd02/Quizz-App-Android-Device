@@ -10,8 +10,8 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_quizzActivityFragment"
-            app:destination="@id/quizzActivityFragment" />
+            android:id="@+id/action_mainFragment_to_quizzChooseDifficulty"
+            app:destination="@id/quizzChooseDifficulty" />
     </fragment>
     <fragment
         android:id="@+id/quizzActivityFragment"
@@ -33,5 +33,14 @@
         <action
             android:id="@+id/action_quizzResults_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizzChooseDifficulty"
+        android:name="com.example.quizzapp.QuizzChooseDifficulty"
+        android:label="fragment_quizz_choose_difficulty"
+        tools:layout="@layout/fragment_quizz_choose_difficulty" >
+        <action
+            android:id="@+id/action_quizzChooseDifficulty_to_quizzActivityFragment"
+            app:destination="@id/quizzActivityFragment" />
     </fragment>
 </navigation>

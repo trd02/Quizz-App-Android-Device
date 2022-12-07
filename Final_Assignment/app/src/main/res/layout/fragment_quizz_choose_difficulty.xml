@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_quizz2"
+    tools:context=".QuizzChooseDifficulty">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/easy"
+        android:background="@color/purple_700"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Dễ"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <Button
+        android:id="@+id/normal"
+        android:background="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thường"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"/>
+    <Button
+        android:id="@+id/hard"
+        android:background="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khó"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/difficultyStart"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Bắt đầu"
+        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/round_back_blue20"/>
+</RelativeLayout>

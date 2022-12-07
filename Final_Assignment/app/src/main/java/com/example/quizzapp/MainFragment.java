@@ -184,7 +184,7 @@ public class MainFragment extends Fragment {
                     getParentFragmentManager().setFragmentResult("dataFromMenu", bundle);
 
                     //Khởi chạy fragment tiếp theo
-                    navController.navigate(R.id.action_mainFragment_to_quizzActivityFragment);
+                    navController.navigate(R.id.action_mainFragment_to_quizzChooseDifficulty);
                 }
             }
         });
