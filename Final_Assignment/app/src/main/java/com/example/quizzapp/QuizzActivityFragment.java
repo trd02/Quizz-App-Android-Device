@@ -25,7 +25,7 @@ import java.util.TimerTask;
  */
 public class QuizzActivityFragment extends Fragment {
 
-    View view; //Vì fragment phải ánh xạ lại chính nó.
+    View view;
 
     private String getSelectedTopicName = "";
     private int getSelectedDifficulty;
@@ -36,9 +36,7 @@ public class QuizzActivityFragment extends Fragment {
     private AppCompatButton nextBtn;
 
     private Timer quizzTimer;
-
     private int totalTimeInMins = 1;
-
     private int seconds = 0;
 
     private List<QuestionList> questionList;
@@ -168,7 +166,7 @@ public class QuizzActivityFragment extends Fragment {
     private void changeNextQuestion(){
         currentQuestionPosition++;
         if((currentQuestionPosition+1) == questionList.size()){
-            nextBtn.setText("Submit Quiz");
+            nextBtn.setText("Hoàn Thành");
         }
         if(currentQuestionPosition < questionList.size()){
             selectedOptionByUser = "";

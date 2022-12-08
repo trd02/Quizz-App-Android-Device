@@ -8,7 +8,6 @@ public class QuestionsBank {
     private static List<QuestionList> dialyQuestions() {
 
         final List<QuestionList> questionsLists = new ArrayList<>();
-
         //
         final QuestionList question1 =  new QuestionList("Than đá thuộc loại đá nào?", "Trầm tích", "Hoá thạch", "Hoa cương", "Sa Thạch", "Trầm tích", "");
         final QuestionList question2 = new QuestionList("Những ngọn cát được hình thành bởi gió có tên gọi là gì?", "Đùn cát", "Cồn cát", "Thác cát", "Khẩu cát", "Cồn cát", "");

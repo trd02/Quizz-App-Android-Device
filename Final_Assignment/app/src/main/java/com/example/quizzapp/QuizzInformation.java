@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 public class QuizzInformation extends Fragment {
 
@@ -35,11 +34,11 @@ public class QuizzInformation extends Fragment {
 
         back = view.findViewById(R.id.backToResult);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_quizzInformation_to_mainFragment);
-            }
-        });
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_quizzInformation_to_mainFragment);
+//            }
+//        });
     }
 }
