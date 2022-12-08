@@ -3,37 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizzInformation"
-    android:background="@drawable/background_quizz2"
-    android:orientation="vertical">
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".QuizzInformation">
 
-    <!-- TODO: Update blank fragment layout -->
-    <EditText
-        android:id="@+id/author"
-        android:layout_marginTop="300dp"
-        android:layout_width="400dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nhóm phát triển: Lê Đức, Đinh Triệu Đan"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/round_back_blue20"/>
-    <EditText
-        android:id="@+id/contact"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:text="Thông tin liên hệ: @vnu.edu.vn"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/round_back_blue20"/>
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:text="Nhóm phát triển:\n Lê Đức\n Đinh Triệu Đan\n Thông tin liên hệ:\n imeo@vnu.edu.vn"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
     <Button
         android:layout_marginTop="20dp"
         android:id="@+id/backToResult"
@@ -41,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Quay lại"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_800"/>
 
 </LinearLayout>

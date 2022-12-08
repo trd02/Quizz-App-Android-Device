@@ -7,8 +7,6 @@
     android:background="@drawable/background_quizz2"
     tools:context=".QuizzActivityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

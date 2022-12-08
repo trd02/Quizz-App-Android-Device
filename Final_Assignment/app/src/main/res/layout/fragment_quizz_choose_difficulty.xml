@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_quizz2"
+    android:background="@color/white"
     tools:context=".QuizzChooseDifficulty">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,44 +12,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <Button
-        android:id="@+id/easy"
-        android:background="@color/purple_700"
-        android:layout_marginTop="200dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="Dễ"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
-    <Button
-        android:id="@+id/normal"
-        android:background="@color/purple_700"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Thường"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"/>
-    <Button
-        android:id="@+id/hard"
-        android:background="@color/purple_700"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Khó"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/green"
+            android:text="Dễ"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Thường"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/hard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/red"
+            android:text="Khó"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
+
     <Button
         android:id="@+id/difficultyStart"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Bắt đầu"
-        android:layout_margin="20dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/round_back_blue20"/>
+        android:layout_margin="40dp"
+        android:background="@drawable/round_back_blue20"
+        android:backgroundTint="@color/blue_800"
+        android:text="Bắt đầu" />
 </RelativeLayout>
