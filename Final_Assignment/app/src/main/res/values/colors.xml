@@ -11,10 +11,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue">#ff2196f3</color>
-    <color name="blue_800">#ff1e88e5</color>
+    <color name="blue_800">#0062cc</color>
     <color name="green">#06c258</color>
     <color name="yellow">#e5de00</color>
     <color name="red">#e60000</color>
+    <color name="greenChange">#a2f78d</color>
+    <color name="yellowChange">#fff176</color>
+    <color name="redChange">#ff2e2e</color>
     <color name="gray">#808080</color>
 
 </resources>

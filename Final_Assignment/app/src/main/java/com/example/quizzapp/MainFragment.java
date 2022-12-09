@@ -18,7 +18,7 @@ public class MainFragment extends Fragment {
 
     String selectedTopicName = "";
     View view;
-    private BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigation;
 
     public MainFragment() {
         // Required empty public constructor
@@ -133,6 +133,5 @@ public class MainFragment extends Fragment {
 
             }
         });
-
     }
 }

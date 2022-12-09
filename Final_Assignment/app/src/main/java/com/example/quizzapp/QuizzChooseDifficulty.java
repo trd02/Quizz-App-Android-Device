@@ -1,5 +1,6 @@
 package com.example.quizzapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,10 +55,6 @@ public class QuizzChooseDifficulty extends Fragment {
                     @Override
                     public void onClick(View v) {
                         selectedDifficulty = 1;
-
-                        easy.setBackgroundResource(R.color.teal_200);
-                        normal.setBackgroundResource(R.color.purple_700);
-                        hard.setBackgroundResource(R.color.purple_700);
                     }
                 });
 
@@ -65,10 +62,6 @@ public class QuizzChooseDifficulty extends Fragment {
                     @Override
                     public void onClick(View v) {
                         selectedDifficulty = 2;
-
-                        easy.setBackgroundResource(R.color.purple_700);
-                        normal.setBackgroundResource(R.color.teal_200);
-                        hard.setBackgroundResource(R.color.purple_700);
                     }
                 });
 
@@ -76,10 +69,6 @@ public class QuizzChooseDifficulty extends Fragment {
                     @Override
                     public void onClick(View v) {
                         selectedDifficulty = 3;
-
-                        easy.setBackgroundResource(R.color.purple_700);
-                        normal.setBackgroundResource(R.color.purple_700);
-                        hard.setBackgroundResource(R.color.teal_200);
                     }
                 });
 

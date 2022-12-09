@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_quizz2"
+    android:background="@color/white"
     tools:context=".QuizzActivityFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#1F6BB8">
+        android:background="@color/blue">
 
         <ImageView
             android:layout_width="50dp"
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_back_white10"
         android:elevation="1dp"
         android:gravity="center"
@@ -88,9 +88,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Option 1"
-        android:background="@color/purple_700"
+        android:background="@color/blue"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"/>
 
     <Button
@@ -98,9 +98,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Option 2"
-        android:background="@color/purple_700"
+        android:background="@color/blue"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"/>
 
     <Button
@@ -108,9 +108,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Option 3"
-        android:background="@color/purple_700"
+        android:background="@color/blue"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"/>
 
     <Button
@@ -118,9 +118,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Option 4"
-        android:background="@color/purple_700"
+        android:background="@color/blue"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -129,8 +129,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:text="Tiếp theo"
-        android:background="@drawable/round_back_blue20"/>
+        android:background="@color/blue_800"/>
 
 </LinearLayout>
