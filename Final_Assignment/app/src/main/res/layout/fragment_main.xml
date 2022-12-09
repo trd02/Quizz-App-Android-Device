@@ -214,7 +214,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/cpp" />
+                        android:src="@drawable/dialy" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -243,7 +243,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/math" />
+                        android:src="@drawable/hoahoc" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -272,7 +272,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/science" />
+                        android:src="@drawable/vutru" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -301,7 +301,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/history" />
+                        android:src="@drawable/dongvat" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -330,7 +330,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/art" />
+                        android:src="@drawable/thienvan" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -347,7 +347,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white">
-                    <!--                //Điền-->
                     <ImageButton
                         android:id="@+id/sinhHoc"
                         android:layout_width="match_parent"
@@ -359,7 +358,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
-                        android:src="@drawable/art" />
+                        android:src="@drawable/sinhhoc" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
